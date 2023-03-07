@@ -1,3 +1,8 @@
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  body {
+    min-width: 1050px;
+  }
+}
 nav .navul {
   list-style-type: none;
   margin: 0;
