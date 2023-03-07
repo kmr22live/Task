@@ -1,6 +1,6 @@
 @media screen and (min-width: 200px) and (max-width: 480px) {
   body {
-    min-width: 1050px;
+    min-width: 576px;
   }
 }
 nav .navul {
