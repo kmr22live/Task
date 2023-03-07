@@ -1,0 +1,162 @@
+nav .navul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+header .navul li {
+  display: inline-flex;
+  justify-content: right;
+}
+
+header .navul li a {
+  text-decoration: none;
+  padding: 15px;
+  color: white;
+}
+
+.section1Text {
+  color: white;
+}
+
+section .rebel {
+  width: 45%;
+}
+
+@media only screen and (max-width: 992px) {
+  section .rebel {
+    margin-top: 50px;
+    width: 90%;
+    order: 2;
+  }
+  section .picture1 {
+    order: 1;
+  }
+}
+
+.section2 .buttoncontainer {
+  margin-top: 50px;
+}
+.section2 .buttoncontainer .btn {
+  width: 110px;
+}
+.section2 .buttoncontainer .btnone {
+  width: 150px;
+}
+
+.section3 {
+  height: 150px;
+}
+@media only screen and (max-width: 763px) {
+  .section3 .h3 {
+    font-size: medium;
+  }
+  .section3 {
+    width: 100%;
+  }
+}
+
+.section4 {
+  height: 100px;
+}
+
+.section4 .starclass {
+  height: 50px;
+  border-bottom: 1px solid black;
+}
+.section4 .fontstar {
+  background-color: white;
+  padding-left: 30px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  text-indent: -15px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.section4 .awards {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  .section4 .awardcol1 {
+    margin-top: 10px;
+  }
+
+  .section5 .poetline {
+    margin-top: 210px;
+  }
+  .footer .container .cardsecond {
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 1px solid #63666c;
+    border-bottom: 1px solid #63666c;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .section4 .awardcol2 {
+    margin-top: 10px;
+  }
+  .section4 {
+    margin-bottom: 450px;
+  }
+  .section5 .poetul {
+    margin-bottom: 50px;
+  }
+}
+
+.section5 {
+  width: 99%;
+  margin-top: 400px;
+  margin-bottom: 100px;
+}
+.section5 .poet {
+}
+.section5 .fontstar {
+  transform: translateY(-30px);
+  text-indent: -15px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 35px;
+  padding: 0;
+}
+
+.section5 .text1 {
+  background-color: white;
+  padding-left: 25px;
+  padding-right: 15px;
+}
+
+.section5 .poetul {
+  margin-left: 10px;
+}
+.section5 .poemul {
+  margin-left: 10px;
+}
+footer {
+  background-color: black;
+}
+footer .container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+footer .container .card {
+  border: 0;
+  background-color: black;
+}
+footer .container .card-title {
+  color: white;
+}
+footer .container .card-text {
+  font-weight: 400;
+  color: white;
+}
+footer .container .cardsecond {
+  border-left: 1px solid #63666c;
+  border-right: 1px solid #63666c;
+  border-radius: 0;
+}
