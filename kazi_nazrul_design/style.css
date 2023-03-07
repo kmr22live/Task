@@ -2,6 +2,9 @@
   body {
     min-width: 576px;
   }
+  .section1Text .text-center {
+    font-size: 15px;
+  }
 }
 nav .navul {
   list-style-type: none;
