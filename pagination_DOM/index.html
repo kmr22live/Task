@@ -18,10 +18,14 @@
     <style>
       body {
       }
-      #heading1 {
+      #title {
         margin-top: 10px;
         text-align: center;
         font-weight: bold;
+      }
+      #description {
+        display: flex;
+        justify-content: center;
       }
       #div1 {
         margin: 10px auto;
@@ -39,17 +43,29 @@
         justify-content: center;
         margin-top: 20px;
       }
+      table {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+
+      tr {
+        display: flex;
+        flex-direction: column;
+      }
       @media only screen and (max-width: 600px) and (min-width: 300px) {
         #ulList {
           --bs-pagination-margin-x: 1.5rem;
           --bs-pagination-margin-y: 0.75rem;
-          --bs-pagination-font-size: 0.6rem;
+          --bs-pagination-font-size: 0.4rem;
         }
       }
     </style>
   </head>
 
   <body>
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
     <script src="script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
