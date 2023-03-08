@@ -22,8 +22,11 @@ divText.append(table);
 let tab = document.querySelector(".table");
 tab.classList.add("table-bordered");
 
+let thead = document.createElement("thead");
+tab.append(thead);
+
 let tr = document.createElement("tr");
-tab.append(tr);
+thead.append(tr);
 
 function createtabHEad(heading) {
   let th = document.createElement("th");
@@ -35,8 +38,11 @@ createtabHEad("Name:");
 createtabHEad(`ID :`);
 createtabHEad("Email:");
 
+let tbody = document.createElement("tbody");
+tab.append(tbody);
+
 let tr1 = document.createElement("tr");
-tab.append(tr1);
+tbody.append(tr1);
 
 function createtabData(heading) {
   let td = document.createElement("th");
