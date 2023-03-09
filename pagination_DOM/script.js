@@ -16,6 +16,7 @@ document.body.append(div1);
 let divText = document.getElementById("div1");
 
 let table = document.createElement("table");
+table.setAttribute("id", "table");
 table.setAttribute("class", "table");
 divText.append(table);
 
