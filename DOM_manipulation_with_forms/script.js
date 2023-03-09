@@ -170,6 +170,7 @@ div1.setAttribute("class", "table-responsive");
 document.body.append(div1);
 
 let divText = document.getElementById("div1");
+divText.classList.add("d-none");
 
 let table = document.createElement("table");
 table.setAttribute("id", "table");
@@ -298,6 +299,7 @@ getsubmit.addEventListener("click", function (event) {
     getForm.reset();
     console.log(SubmittedData);
     alert("Submitted Successfully");
+    divText.classList.remove("d-none");
 
     function createtabData() {
       let tr1 = document.createElement("tr");
@@ -322,19 +324,6 @@ getsubmit.addEventListener("click", function (event) {
         tr1.append(td);
       }
     }
-
-    // for (let i = 0; i < SubmittedData.length; i++) createtabData();
-
-    // let tableSlno = document.querySelectorAll("#tno");
-    // let tableFirstname = document.querySelectorAll("#tfirst");
-    // let tableLast = document.querySelectorAll("#tlast");
-    // let tableEmail = document.querySelectorAll("#temail");
-    // let tableGender = document.querySelectorAll("#tgender");
-    // let tableAddress = document.querySelectorAll("#taddress");
-    // let tableState = document.querySelectorAll("#tstate");
-    // let tableCountry = document.querySelectorAll("#tcountry");
-    // let tablePin = document.querySelectorAll("#tpin");
-    // let tableChoice = document.querySelectorAll("#tchoice");
 
     if (SubmittedData.length > 0) {
       for (let i = 0; i < 1; i++) createtabData();
@@ -368,152 +357,3 @@ getsubmit.addEventListener("click", function (event) {
     return false;
   }
 });
-
-// //table
-
-// let div1 = document.createElement("div");
-// div1.setAttribute("id", "div1");
-// div1.setAttribute("class", "table-responsive");
-// document.body.append(div1);
-
-// let divText = document.getElementById("div1");
-
-// let table = document.createElement("table");
-// table.setAttribute("id", "table");
-// table.setAttribute("class", "table");
-// divText.append(table);
-
-// let tab = document.querySelector(".table");
-// tab.classList.add("table-bordered");
-// tab.classList.add("table-hover");
-
-// let thead = document.createElement("thead");
-// tab.append(thead);
-
-// let tr = document.createElement("tr");
-// thead.append(tr);
-
-// function createtabHEad(heading) {
-//   let th = document.createElement("th");
-//   th.textContent = heading;
-//   tr.append(th);
-// }
-
-// createtabHEad("No");
-// createtabHEad("Firstname");
-// createtabHEad("Lastname");
-// createtabHEad("Email");
-// createtabHEad("Gender");
-// createtabHEad("Address");
-// createtabHEad("State");
-// createtabHEad("Country");
-// createtabHEad("Pincode");
-// createtabHEad("Choice of Food");
-
-// //body table
-// let tbody = document.createElement("tbody");
-// tab.append(tbody);
-// function createtabData() {
-//   let tr1 = document.createElement("tr");
-//   tbody.append(tr1);
-//   let nameTD = [
-//     "tno",
-//     "tfirst",
-//     "tlast",
-//     "temail",
-//     "tgender",
-//     "taddress",
-//     "tstate",
-//     "tcountry",
-//     "tpin",
-//     "tchoice",
-//   ];
-
-//   for (let i = 0; i < 10; i++) {
-//     let td = document.createElement("td");
-//     td.setAttribute("id", `${nameTD[i]}`);
-//     // td.textContent = "Demo";
-//     tr1.append(td);
-//   }
-// }
-
-// console.log(SubmittedData.length);
-
-// // for (let i = 0; i < SubmittedData.length; i++) createtabData();
-
-// // let tableSlno = document.querySelectorAll("#tno");
-// // let tableFirstname = document.querySelectorAll("#tfirst");
-// // let tableLast = document.querySelectorAll("#tlast");
-// // let tableEmail = document.querySelectorAll("#temail");
-// // let tableGender = document.querySelectorAll("#tgender");
-// // let tableAddress = document.querySelectorAll("#taddress");
-// // let tableState = document.querySelectorAll("#tstate");
-// // let tableCountry = document.querySelectorAll("#tcountry");
-// // let tablePin = document.querySelectorAll("#tpin");
-// // let tableChoice = document.querySelectorAll("#tchoice");
-
-// if (SubmittedData.length > 0) {
-//   console.log(SubmittedData.length);
-
-//   for (let i = 0; i < SubmittedData.length; i++) createtabData();
-
-//   let tableSlno = document.querySelectorAll("#tno");
-//   let tableFirstname = document.querySelectorAll("#tfirst");
-//   let tableLast = document.querySelectorAll("#tlast");
-//   let tableEmail = document.querySelectorAll("#temail");
-//   let tableGender = document.querySelectorAll("#tgender");
-//   let tableAddress = document.querySelectorAll("#taddress");
-//   let tableState = document.querySelectorAll("#tstate");
-//   let tableCountry = document.querySelectorAll("#tcountry");
-//   let tablePin = document.querySelectorAll("#tpin");
-//   let tableChoice = document.querySelectorAll("#tchoice");
-//   for (let i = 0; i < SubmittedData.length; i++) {
-//     tableSlno[i].textContent = i + 1;
-//     tableFirstname[i].textContent = SubmittedData[i].firsts;
-//     tableLast[i].textContent = SubmittedData[i].lasts;
-//     tableEmail[i].textContent = SubmittedData[i].email;
-//     tableGender[i].textContent = SubmittedData[i].gens;
-//     tableAddress[i].textContent = SubmittedData[i].adds;
-//     tableState[i].textContent = SubmittedData[i].states;
-//     tableCountry[i].textContent = SubmittedData[i].countrys;
-//     tablePin[i].textContent = SubmittedData[i].pins;
-//     tableChoice[i].textContent = SubmittedData[i].foods;
-//   }
-// }
-
-// //old---------------------------------------------------
-// let input = document.createElement("input");
-// input.setAttribute("type", "submit");
-// input.setAttribute("id", "submit");
-// getForm.append(input);
-
-// let getsubmit = document.getElementById("submit");
-// let username = document.getElementById("username");
-// let email = document.getElementById("email");
-// let mobile = document.getElementById("mobile");
-
-// //js
-// getsubmit.addEventListener("click", function (event) {
-//   if (username.value == "") {
-//     alert("Enter the Username");
-//     event.preventDefault();
-//     return false;
-//   }
-
-//   if (email.value == "") {
-//     alert("Enter the email address");
-//     event.preventDefault();
-//     return false;
-//   }
-//   if (mobile.value == "") {
-//     alert("Enter the mobile number");
-//     event.preventDefault();
-//     return false;
-//   }
-//   let confirmLogin = confirm("Are you sure, want to submit");
-//   if (confirmLogin) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// });
