@@ -204,9 +204,9 @@ jsonfile.onload = function () {
       lastpage.classList.add("active");
     });
     nextpage.addEventListener("click", function () {
-      console.log(presentpage);
-      if (presentpage == 9) lastpage.classList.add("active");
-      if (presentpage <= 8) {
+
+      if (presentpage == 10) lastpage.classList.add("active");
+      if (presentpage <= 9) {
         presentpage += 1;
         showtodiv(presentpage);
       }
