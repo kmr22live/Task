@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOM Forms</title>
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <style>
+      #title {
+        margin-top: 10px;
+        text-align: center;
+        font-weight: bold;
+      }
+      #description {
+        display: flex;
+        justify-content: center;
+      }
+
+      button {
+        cursor: pointer;
+      }
+      input {
+        background-color: transparent;
+        text-align: end;
+        width: 100%;
+        color: white;
+        border: 0px;
+        font-size: 65px;
+      }
+      .calculator {
+        border: 2px solid #ededed;
+        border-radius: 50px;
+        width: 100%;
+        max-width: 350px;
+        background-color: black;
+        padding: 2rem 1rem;
+        display: flex;
+        margin: 10px auto;
+        font-family: sans-serif;
+      }
+      .display {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+
+      .all_buttons > * + * {
+        margin-top: 20px;
+      }
+      .btnlast {
+        gap: 20px;
+      }
+
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        color: #ffffff;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div class="row" id="container">
+        <h1 id="title">DOM Calculator</h1>
+        <p id="description">Using HTML, CSS and JS</p>
+      </div>
+    </section>
+    <section class="container row calculator">
+      <div class="display">
+        <input type="text" disabled id="result" class="calc_output" value="0" />
+      </div>
+      <div class="all_buttons">
+        <div class="btn_group row d-flex justify-content-evenly">
+          <button value="clear" id="clear" class="col-3 btn btn-secondary">
+            AC
+          </button>
+          <button value="delete" id="del" class="col-3 btn btn-secondary">
+            Del
+          </button>
+          <button value="%" id="modulus" class="col-3 btn btn-secondary">
+            %
+          </button>
+          <button value="/" id="division" class="col-3 btn btn-warning">
+            ÷
+          </button>
+        </div>
+        <div class="btngroup row d-flex justify-content-evenly">
+          <button value="7" itemid="7" class="col-3 btn btn-dark" id="7">
+            7
+          </button>
+          <button value="8" id="8" class="col-3 btn btn-dark">8</button>
+          <button value="9" id="9" class="col-3 btn btn-dark">9</button>
+          <button value="*" id="multiply" class="col-3 btn btn-warning">
+            x
+          </button>
+        </div>
+        <div class="btngroup row d-flex justify-content-evenly">
+          <button value="4" id="4" class="col-3 btn btn-dark">4</button>
+          <button value="5" id="5" class="col-3 btn btn-dark">5</button>
+          <button value="6" id="6" class="col-3 btn btn-dark">6</button>
+          <button value="-" id="minus" class="col-3 btn btn-warning">-</button>
+        </div>
+        <div class="btngroup row d-flex justify-content-evenly">
+          <button value="1" id="1" class="col-3 btn btn-dark">1</button>
+          <button value="2" id="2" class="col-3 btn btn-dark">2</button>
+          <button value="3" id="3" class="col-3 btn btn-dark">3</button>
+          <button value="+" id="plus" class="col-3 btn btn-warning">+</button>
+        </div>
+        <div class="btngroup row d-flex justify-content-evenly">
+          <button value="zero" id="0" class="col-6 btn btn-dark">0</button>
+          <button value="dzero" id="00" class="col-6 btn btn-dark">00</button>
+          <button value="." id="dot" class="col-3 btn btn-dark">.</button>
+          <button value="=" id="equal" class="col-3 btn btn-warning">=</button>
+        </div>
+      </div>
+    </section>
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
