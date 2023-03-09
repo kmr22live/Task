@@ -36,9 +36,9 @@ function createtabHEad(heading) {
   tr.append(th);
 }
 
-createtabHEad("Name:");
-createtabHEad(`ID :`);
-createtabHEad("Email:");
+createtabHEad("Name");
+createtabHEad(`ID`);
+createtabHEad("Email");
 
 //body table
 let tbody = document.createElement("tbody");
@@ -61,10 +61,6 @@ for (let i = 0; i < 10; i++) createtabData();
 let tableName = document.querySelectorAll("#name");
 let tableid = document.querySelectorAll("#idno");
 let tableemail = document.querySelectorAll("#email");
-
-console.log(tableName);
-console.log(tableid);
-console.log(tableemail);
 
 let divlast = document.createElement("div");
 divlast.setAttribute("id", "buttons");
@@ -138,7 +134,6 @@ jsonfile.onload = function () {
     createlist("Next");
     createlist("Last");
     let pageList = document.querySelectorAll(".page-item");
-    console.log(pageList[0]);
     // pageList[0].classList.add("disabled");
     let firstpage = pageList[0];
     let previouspage = pageList[1];
@@ -161,37 +156,35 @@ jsonfile.onload = function () {
 
     function showtodiv(n) {
       if (Number.isInteger(+n)) {
-        let show = +n - 1;
-        console.log(show);
-        //     divText.innerHTML = `Name:${users[show].name}<br>
-        // ID:${users[show].id}<br>
-        // Email:${users[show].email}`;
-        let numb = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-        let a = [];
-        allorder.forEach((arr) => {
-          if (arr.includes(numb[show])) {
-            a = arr;
-            console.log("im her");
-          }
-        });
-        console.log([a[0]]);
-        for (let i = 0; i < 10; i++) {
-          tableName[i].textContent = users[a[i]].name;
-          tableid[i].textContent = users[a[i]].id;
-          tableemail[i].textContent = users[a[i]].email;
-        }
-        pageinwindow(n);
-        pageList[+n].classList.add("active");
-        previouspage.classList.remove("active");
-        if (presentpage == 10) lastpage.classList.add("active");
-      }
+        if (+n > 0) {
+          let show = +n - 1;
 
-      //   if (n == "First") {
-      //     divText.innerHTML = `Name:${users[0].name}<br>
-      // ID:${users[0].id}<br>
-      // Email:${users[0].email}`;
-      //     previouspage.classList.add("disable");
-      //   }
+          let numb = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+          let a = [];
+          allorder.forEach((arr) => {
+            if (arr.includes(numb[show])) {
+              a = arr;
+            }
+          });
+
+          for (let i = 0; i < 10; i++) {
+            tableName[i].textContent = users[a[i]].name;
+            tableid[i].textContent = users[a[i]].id;
+            tableemail[i].textContent = users[a[i]].email;
+          }
+          pageinwindow(presentpage);
+          pageList[presentpage].classList.add("active");
+          previouspage.classList.remove("active");
+          if (presentpage == 10) lastpage.classList.add("active");
+        }
+
+        //   if (n == "First") {
+        //     divText.innerHTML = `Name:${users[0].name}<br>
+        // ID:${users[0].id}<br>
+        // Email:${users[0].email}`;
+        //     previouspage.classList.add("disable");
+        //   }
+      }
     }
     firstpage.addEventListener("click", function () {
       presentpage = 1;
@@ -204,20 +197,20 @@ jsonfile.onload = function () {
       lastpage.classList.add("active");
     });
     nextpage.addEventListener("click", function () {
-
-      if (presentpage == 10) lastpage.classList.add("active");
+      // if (presentpage == 9) lastpage.classList.add("active");
       if (presentpage <= 9) {
         presentpage += 1;
         showtodiv(presentpage);
       }
-      if (presentpage == 9) lastpage.classList.add("active");
     });
     previouspage.addEventListener("click", function () {
-      if (presentpage == 1) firstpage.classList.add("active");
-      if (presentpage >= 2) {
+      console.log(presentpage);
+
+      if (presentpage > 1) {
         presentpage -= 1;
         showtodiv(presentpage);
       }
+      if (presentpage == 1) firstpage.classList.add("active");
     });
     // it will show you the result as per button click
     unlist.addEventListener("click", function (e) {
@@ -234,6 +227,5 @@ jsonfile.onload = function () {
     showtodiv(presentpage);
   } else {
     console.log(xhr.status);
-    is;
   }
 };
