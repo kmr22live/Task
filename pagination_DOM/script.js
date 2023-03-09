@@ -22,6 +22,7 @@ divText.append(table);
 
 let tab = document.querySelector(".table");
 tab.classList.add("table-bordered");
+tab.classList.add("table-hover");
 
 let thead = document.createElement("thead");
 tab.append(thead);
@@ -39,26 +40,31 @@ createtabHEad("Name:");
 createtabHEad(`ID :`);
 createtabHEad("Email:");
 
+//body table
 let tbody = document.createElement("tbody");
 tab.append(tbody);
+function createtabData() {
+  let tr1 = document.createElement("tr");
+  tbody.append(tr1);
+  let nameTD = ["name", "idno", "email"];
 
-let tr1 = document.createElement("tr");
-tbody.append(tr1);
-
-function createtabData(heading) {
-  let td = document.createElement("th");
-  td.setAttribute("id", `${heading}`);
-  td.textContent = "Demo";
-  tr1.append(td);
+  for (let i = 0; i < 3; i++) {
+    let td = document.createElement("td");
+    td.setAttribute("id", `${nameTD[i]}`);
+    td.textContent = "Demo";
+    tr1.append(td);
+  }
 }
 
-createtabData("name");
-createtabData("idno");
-createtabData("email");
+for (let i = 0; i < 10; i++) createtabData();
 
-let tableName = document.getElementById("name");
-let tableid = document.getElementById("idno");
-let tableemail = document.getElementById("email");
+let tableName = document.querySelectorAll("#name");
+let tableid = document.querySelectorAll("#idno");
+let tableemail = document.querySelectorAll("#email");
+
+console.log(tableName);
+console.log(tableid);
+console.log(tableemail);
 
 let divlast = document.createElement("div");
 divlast.setAttribute("id", "buttons");
@@ -89,16 +95,16 @@ let createlist = function (i) {
   list.append(anchortag);
 };
 
-let order1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let order2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-let order3 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
-let order4 = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40];
-let order5 = [41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
-let order6 = [51, 52, 53, 54, 55, 56, 57, 58, 59, 60];
-let order7 = [61, 62, 63, 64, 65, 66, 67, 68, 69, 70];
-let order8 = [71, 72, 73, 74, 75, 76, 77, 78, 79, 80];
-let order9 = [81, 82, 83, 84, 85, 86, 87, 88, 89, 90];
-let order10 = [91, 92, 93, 94, 95, 96, 97, 98, 99, 100];
+let order1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let order2 = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+let order3 = [20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
+let order4 = [30, 31, 32, 33, 34, 35, 36, 37, 38, 39];
+let order5 = [40, 41, 42, 43, 44, 45, 46, 47, 48, 49];
+let order6 = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59];
+let order7 = [60, 61, 62, 63, 64, 65, 66, 67, 68, 69];
+let order8 = [70, 71, 72, 73, 74, 75, 76, 77, 78, 79];
+let order9 = [80, 81, 82, 83, 84, 85, 86, 87, 88, 89];
+let order10 = [90, 91, 92, 93, 94, 95, 96, 97, 98, 99];
 let allorder = [
   order1,
   order2,
@@ -122,7 +128,7 @@ jsonfile.send();
 jsonfile.onload = function () {
   if (jsonfile.status == 200) {
     let users = JSON.parse(jsonfile.response);
-    let usersLen = users.length;
+    let usersLen = 10;
     createlist("First");
 
     createlist("Previous");
@@ -141,18 +147,13 @@ jsonfile.onload = function () {
 
     let pageinwindow = function (n) {
       pageList.forEach((t) => {
-        t.classList.add("d-none");
         t.classList.remove("active");
       });
-      firstpage.classList.remove("d-none");
-      previouspage.classList.remove("d-none");
-      nextpage.classList.remove("d-none");
-      lastpage.classList.remove("d-none");
 
       allorder.forEach((arr) => {
         if (arr.includes(+n)) {
           arr.forEach((value) => {
-            pageList[value].classList.remove("d-none");
+            // pageList[value].classList.remove("d-none");
           });
         }
       });
@@ -161,15 +162,28 @@ jsonfile.onload = function () {
     function showtodiv(n) {
       if (Number.isInteger(+n)) {
         let show = +n - 1;
+        console.log(show);
         //     divText.innerHTML = `Name:${users[show].name}<br>
         // ID:${users[show].id}<br>
         // Email:${users[show].email}`;
-        tableName.textContent = users[show].name;
-        tableid.textContent = users[show].id;
-        tableemail.textContent = users[show].email;
+        let numb = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+        let a = [];
+        allorder.forEach((arr) => {
+          if (arr.includes(numb[show])) {
+            a = arr;
+            console.log("im her");
+          }
+        });
+        console.log([a[0]]);
+        for (let i = 0; i < 10; i++) {
+          tableName[i].textContent = users[a[i]].name;
+          tableid[i].textContent = users[a[i]].id;
+          tableemail[i].textContent = users[a[i]].email;
+        }
         pageinwindow(n);
         pageList[+n].classList.add("active");
         previouspage.classList.remove("active");
+        if (presentpage == 10) lastpage.classList.add("active");
       }
 
       //   if (n == "First") {
@@ -185,16 +199,18 @@ jsonfile.onload = function () {
       firstpage.classList.add("active");
     });
     lastpage.addEventListener("click", function () {
-      presentpage = 100;
+      presentpage = 10;
       showtodiv(presentpage);
       lastpage.classList.add("active");
     });
     nextpage.addEventListener("click", function () {
-      if (presentpage == 100) lastpage.classList.add("active");
-      if (presentpage <= 100) {
+      console.log(presentpage);
+      if (presentpage == 9) lastpage.classList.add("active");
+      if (presentpage <= 8) {
         presentpage += 1;
         showtodiv(presentpage);
       }
+      if (presentpage == 9) lastpage.classList.add("active");
     });
     previouspage.addEventListener("click", function () {
       if (presentpage == 1) firstpage.classList.add("active");
