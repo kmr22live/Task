@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DOM Forms</title>
+    <title>DOM calculator</title>
 
     <meta charset="utf-8" />
     <meta
@@ -35,15 +35,15 @@
         width: 100%;
         color: white;
         border: 0px;
-        font-size: 65px;
+        font-size: 67.5px;
       }
       .calculator {
-        border: 2px solid #ededed;
+        border: 2px solid black;
         border-radius: 50px;
         width: 100%;
         max-width: 350px;
         background-color: black;
-        padding: 2rem 1rem;
+        padding: 30px 12px;
         display: flex;
         margin: 10px auto;
         font-family: sans-serif;
@@ -75,61 +75,6 @@
   </head>
 
   <body>
-    <section>
-      <div class="row" id="container">
-        <h1 id="title">DOM Calculator</h1>
-        <p id="description">Using HTML, CSS and JS</p>
-      </div>
-    </section>
-    <section class="container row calculator">
-      <div class="display">
-        <input type="text" disabled id="result" class="calc_output" value="0" />
-      </div>
-      <div class="all_buttons">
-        <div class="btn_group row d-flex justify-content-evenly">
-          <button value="clear" id="clear" class="col-3 btn btn-secondary">
-            AC
-          </button>
-          <button value="delete" id="del" class="col-3 btn btn-secondary">
-            Del
-          </button>
-          <button value="%" id="modulus" class="col-3 btn btn-secondary">
-            %
-          </button>
-          <button value="/" id="division" class="col-3 btn btn-warning">
-            ÷
-          </button>
-        </div>
-        <div class="btngroup row d-flex justify-content-evenly">
-          <button value="7" itemid="7" class="col-3 btn btn-dark" id="7">
-            7
-          </button>
-          <button value="8" id="8" class="col-3 btn btn-dark">8</button>
-          <button value="9" id="9" class="col-3 btn btn-dark">9</button>
-          <button value="*" id="multiply" class="col-3 btn btn-warning">
-            x
-          </button>
-        </div>
-        <div class="btngroup row d-flex justify-content-evenly">
-          <button value="4" id="4" class="col-3 btn btn-dark">4</button>
-          <button value="5" id="5" class="col-3 btn btn-dark">5</button>
-          <button value="6" id="6" class="col-3 btn btn-dark">6</button>
-          <button value="-" id="minus" class="col-3 btn btn-warning">-</button>
-        </div>
-        <div class="btngroup row d-flex justify-content-evenly">
-          <button value="1" id="1" class="col-3 btn btn-dark">1</button>
-          <button value="2" id="2" class="col-3 btn btn-dark">2</button>
-          <button value="3" id="3" class="col-3 btn btn-dark">3</button>
-          <button value="+" id="plus" class="col-3 btn btn-warning">+</button>
-        </div>
-        <div class="btngroup row d-flex justify-content-evenly">
-          <button value="zero" id="0" class="col-6 btn btn-dark">0</button>
-          <button value="dzero" id="00" class="col-6 btn btn-dark">00</button>
-          <button value="." id="dot" class="col-3 btn btn-dark">.</button>
-          <button value="=" id="equal" class="col-3 btn btn-warning">=</button>
-        </div>
-      </div>
-    </section>
     <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
     <script src="script.js"></script>
     <script
