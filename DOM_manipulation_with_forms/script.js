@@ -49,7 +49,7 @@ let formDetails = (namelab, name, texttype) => {
     div1.append(input);
   } else {
     let textarea = document.createElement("textarea");
-    textarea.setAttribute("class", "form-control");
+    textarea.setAttribute("class", "form-control form-group");
     textarea.setAttribute("rows", 2);
     textarea.setAttribute("id", "address");
     textarea.setAttribute("placeholder", "");
@@ -143,13 +143,17 @@ submit.setAttribute("id", "submit");
 getForm.append(submit);
 
 let firstname = document.getElementById("first-name");
+firstname.classList.add("form-group");
+firstname.setAttribute("required", "");
 let lastname = document.getElementById("last-name");
+lastname.setAttribute("required", "");
 let email = document.getElementById("email");
 let gender = document.getElementById("gender");
 let address = document.getElementById("address");
 let state = document.getElementById("state");
 let country = document.getElementById("country");
 let pincode = document.getElementById("pincode");
+pincode.setAttribute("required", "");
 let getsubmit = document.getElementById("submit");
 
 getsubmit.classList.add("btn-primary");
