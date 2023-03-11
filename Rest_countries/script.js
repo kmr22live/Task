@@ -5,7 +5,7 @@ document.body.append(div);
 let heading1 = document.createElement("h1");
 heading1.setAttribute("id", "title");
 heading1.setAttribute("class", "text-center");
-heading1.textContent = "Rest Countries";
+heading1.textContent = "Rest Countries Weather";
 div.append(heading1);
 
 let divrow = document.createElement("div");
@@ -33,21 +33,23 @@ div.append(div3);
 let popTitle = document.getElementById("staticBackdropLabel");
 let popBody = document.getElementById("popupmsg");
 
-function card(cname, capital, region, cc, ll, flag) {
+function card(cname, capital, region, cc, ll, flag, pop, native) {
   let div1 = document.createElement("div");
-  div1.setAttribute("class", "col-lg-4 col-sm-12");
+  div1.setAttribute("class", "col-sm-6 col-md-4 col-lg-4 col-xl-4");
   div1.innerHTML = ` <div class="card h-100 text-center">
       <div class="card-header h1">
         ${cname}
       </div>
      <img src="${flag}" class="card-img-top" alt="">
       <div class="card-body">
-        <h5 class="card-title">Capital:${capital}</h5>
-        <h5 class="card-title">Region:${region}</h5>
-        <h5 class="card-title">Country Code:${cc}</h5>
-        <h5 class="card-title">Latlng:${ll}</h5>
+        <div class="card-text h5">Capital : ${capital}</div>
+        <div class="card-text h5">Native Name : ${native}</div>
+        <div class="card-text h5">Region : ${region}</div>
+        <div class="card-text h5">Population : ${pop}</div>
+        <div class="card-text h5">Country Code : ${cc}</div>
+        <div class="card-text h5">Coordinates : ${ll}</div>
         
-        <button type="button" class="btn btn-primary" value=${ll} data-bs-toggle="modal" data-bs-target="#staticBackdrop">Click for Weather</button>
+        <button type="button" class="btn btn-primary" name="${cname}" value=${ll} data-bs-toggle="modal" data-bs-target="#staticBackdrop">Click for Weather</button>
       </div>
   </div>`;
   divrow.append(div1);
@@ -63,8 +65,13 @@ fetch("https://restcountries.com/v3.1/all")
         obj1.region,
         obj1.flag,
         obj1.latlng,
-        obj1.flags.png
+        obj1.flags.png,
+        obj1.population,
+        obj1.name.official
       );
+      // let native = obj1.name.nativeName;
+      // console.log(Object.values(native)[0]?.official);
+      // console.log(Object.entries(native)[0][1]?.official);
     });
   })
   .catch((err) => console.log(err));
@@ -79,7 +86,7 @@ div.addEventListener("click", function (e) {
     .then((data) => data.json())
     .then((obj) => {
       popBody.innerHTML = `Weather: ${obj.weather[0].main}<br>Description: ${obj.weather[0].description}<br>Temp: ${obj.main.temp}<br>Max-Temp: ${obj.main.temp_max}<br>Min-Temp: ${obj.main.temp_min}<br>Pressure: ${obj.main.pressure}<br>Humidity: ${obj.main.humidity}`;
-      popTitle.innerText = `${obj.name}`;
+      popTitle.innerText = `${e.target.name}`;
     })
     .catch((err) => console.log(err));
 });
