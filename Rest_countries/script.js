@@ -36,8 +36,8 @@ let popBody = document.getElementById("popupmsg");
 function card(cname, capital, region, cc, ll, flag, pop, native) {
   let div1 = document.createElement("div");
   div1.setAttribute("class", "col-sm-6 col-md-4 col-lg-4 col-xl-4");
-  div1.innerHTML = ` <div class="card h-100 text-center">
-      <div class="card-header h1">
+  div1.innerHTML = ` <div class="card h-100 rounded-5 text-center">
+      <div class="card-header rounded-5 rounded-bottom h1">
         ${cname}
       </div>
      <img src="${flag}" class="card-img-top" alt="">
