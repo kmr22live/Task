@@ -5,11 +5,11 @@ document.body.append(div);
 let heading1 = document.createElement("h1");
 heading1.setAttribute("id", "title");
 heading1.setAttribute("class", "text-center");
-heading1.textContent = "Rest Countries Weather";
+heading1.innerHTML = `<i class="fa-solid fa-cloud-sun-rain"></i>&nbsp;Rest Countries Weather`;
 div.append(heading1);
 
 let divrow = document.createElement("div");
-divrow.setAttribute("class", "row p-3 m-0 border-0 g-3");
+divrow.setAttribute("class", "row");
 div.append(divrow);
 
 let div3 = document.createElement("div");
@@ -42,12 +42,14 @@ function card(cname, capital, region, cc, ll, flag, pop, native) {
       </div>
      <img src="${flag}" class="card-img-top" alt="">
       <div class="card-body">
-        <div class="card-text h5">Capital : ${capital}</div>
+        
         <div class="card-text h5">Native Name : ${native}</div>
+        <div class="card-text h5">Capital : ${capital}</div>
         <div class="card-text h5">Region : ${region}</div>
         <div class="card-text h5">Population : ${pop}</div>
         <div class="card-text h5">Country Code : ${cc}</div>
         <div class="card-text h5">Coordinates : ${ll}</div>
+        
         
         <button type="button" class="btn btn-primary" name="${cname}" value=${ll} data-bs-toggle="modal" data-bs-target="#staticBackdrop">Click for Weather</button>
       </div>
@@ -69,9 +71,9 @@ fetch("https://restcountries.com/v3.1/all")
         obj1.population,
         obj1.name.official
       );
-      // let native = obj1.name.nativeName;
+      let native = obj1.name.nativeName;
       // console.log(Object.values(native)[0]?.official);
-      // console.log(Object.entries(native)[0][1]?.official);
+      console.log(Object.entries(native)[0][1]?.official);
     });
   })
   .catch((err) => console.log(err));
