@@ -7,7 +7,7 @@ function random() {
   let randomColor = Math.floor(Math.random() * 16777215).toString(16);
   console.log(randomColor);
   shadow.style = `border: 2px solid #${randomColor};
-  box-shadow: #${randomColor} 0px -12px 30px, #${randomColor} 0px 4px 30px,
+  box-shadow: #${randomColor} 0px 2px 4px, #${randomColor} 0px 7px 13px -3px,
     #${randomColor} 0px 12px 30px;`;
 }
 
