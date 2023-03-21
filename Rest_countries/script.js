@@ -71,9 +71,9 @@ fetch("https://restcountries.com/v3.1/all")
         obj1.population,
         obj1.name.official
       );
-      let native = obj1.name.nativeName;
+      //let native = obj1.name.nativeName;
       // console.log(Object.values(native)[0]?.official);
-      console.log(Object.entries(native)[0][1]?.official);
+      //console.log(Object.entries(native)[0][1]?.official);
     });
   })
   .catch((err) => console.log(err));
